@@ -153,9 +153,9 @@ module Sidekiq
     def build_sessions
       middlewares = self.middlewares
 
-      unless using?(::Rack::Protection) || ENV['RACK_ENV'] == 'test'
-        middlewares.unshift [[::Rack::Protection, { use: :authenticity_token }], nil]
-      end
+#       unless using?(::Rack::Protection) || ENV['RACK_ENV'] == 'test'
+#         middlewares.unshift [[::Rack::Protection, { use: :authenticity_token }], nil]
+#       end
 
       s = sessions
       return unless s
